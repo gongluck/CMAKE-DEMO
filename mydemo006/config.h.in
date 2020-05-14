@@ -1,0 +1,2 @@
+#cmakedefine USEMYPRINT
+#cmakedefine HAVE_PRINTF
