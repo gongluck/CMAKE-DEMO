@@ -3,7 +3,7 @@ set runpath=%cd%
 rmdir /s /q build
 
 for /D %%s in (mydemo*) do ( 
-cmake -DUSEMYPRINT=1 -A Win32 -S ./%%s -B ./build/%%s
+cmake -DUSEMYPRINT=1 -S ./%%s -B ./build/%%s
 cmake --build ./build/%%s --clean-first --config Release --target ALL_BUILD
 
 cd ./build/%%s
