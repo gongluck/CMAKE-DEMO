@@ -1,7 +1,38 @@
 # CMAKE-DEMO
-CMake official tutorial
+cmake 学习
 
-CMake 官方教程
+## 生成工程
+```
+  cmake -D[宏名称]=[宏值] -S [源码目录] -B [生成目录]
+        -G [目标工程(Unix Makefiles...)] -A [附加选项(Win32/x64)] -T [工具集(ClangCL...)]
+        -DCMAKE_TOOLCHAIN_FILE=[工具链配置文件(linux.clangtoolchain.cmake...)]
+        -DANDROID_NDK=[NDK目录]
+        -DCMAKE_BUILD_TYPE=[生成选项(Debug/Release)]
+        -DANDROID_ABI=[安卓ABI(armeabi...)]
+        -DCMAKE_MAKE_PROGRAM=[make工具目录]
+```
+
+## 编译项目
+```
+  cmake --build [项目目录] --clean-first --config [选项(Debug/Release...)] --target [项目(all/ALL_BUILD...)]
+```
+
+## 运行测试
+```
+  ctest --force-new-ctest-process -C [选项(Debug/Release...)]
+```
+
+## 安装
+```
+  cmake --install [项目目录] --prefix [安装目录] --config [选项(Debug/Release...)]
+```
+
+## 打包
+```
+  cpack -C [选项(Debug/Release...)] --config [打包脚本(CPackSourceConfig.cmake/CPackConfig.cmake...)] -B [保存目录]
+```
+
+****************************************************************************************************
 
 # CMake Tutorial
 
