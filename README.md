@@ -1,5 +1,6 @@
 # CMAKE-DEMO
 cmake 学习
+https://gongluck.github.io/tags/cmake/
 
 ## 生成工程
 ```
