@@ -14,6 +14,9 @@ set(SUBMODULE myfun)
 # 必须放在aux_source_directory前,否则同名变量SRCS会冲突
 add_subdirectory(${SUBMODULE})
 
+# 添加包含路径
+include_directories(${SUBMODULE})
+
 # 查找当前目录下所有源文件并保存到变量
 aux_source_directory(. SRCS)
 
