@@ -3,7 +3,7 @@ set runpath=%cd%
 rmdir /s /q build
 
 for /D %%s in (mydemo*) do ( 
-cmake -DUSEMYPRINT=1 -A x64 -T ClangCL -S ./%%s -B ./build/%%s
+cmake -DUSEMYPRINT=1 -G "Visual Studio 16 2019" -A x64 -T ClangCL -S ./%%s -B ./build/%%s
 cmake --build ./build/%%s --clean-first --config Release --target ALL_BUILD
 
 cd ./build/%%s

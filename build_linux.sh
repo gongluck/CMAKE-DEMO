@@ -6,7 +6,7 @@ rm ./build -r
 for f in mydemo*
     do
 	if [ -d $f ]; then
-		cmake -DUSEMYPRINT=1 -S ./$f -B ./build/$f
+		cmake -G "Unix Makefiles" -DUSEMYPRINT=1 -S ./$f -B ./build/$f
 		cmake --build ./build/$f --clean-first --config Release --target all
 
 		cd ./build/$f
