@@ -8,7 +8,7 @@
 #ifndef __MYFUN_H__
 #define __MYFUN_H__
 
-#ifdef myfun_EXPORTS
+#if(defined myfun_EXPORTS) && (defined WIN32)
 #define DLL_EXPORT __declspec(dllexport)
 #else
 #define DLL_EXPORT
