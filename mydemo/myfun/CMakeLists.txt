@@ -12,3 +12,7 @@ aux_source_directory(. SRCS)
 
 # 生成链接库
 add_library(${PROJECT_NAME} SHARED ${SRCS})
+
+# 指定库的安装路径
+install(TARGETS ${PROJECT_NAME} DESTINATION lib)
+install(FILES ${PROJECT_NAME}.h DESTINATION include)

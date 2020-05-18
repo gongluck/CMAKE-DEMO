@@ -41,3 +41,7 @@ add_executable(${PROJECT_NAME} ${SRCS})
 
 # 添加链接库
 target_link_libraries(${PROJECT_NAME} ${EXTRA_LIBS})
+
+# 指定安装路径
+install(TARGETS ${PROJECT_NAME} DESTINATION bin)
+install(FILES "${PROJECT_BINARY_DIR}/config.h" DESTINATION include)
