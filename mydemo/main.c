@@ -5,6 +5,7 @@
  * @Last Modified time: 2020-05-17 17:46:14
  */
 
+#include "config.h"
 #include <stdio.h>
 
 #ifdef USESUBMODULE

@@ -7,6 +7,9 @@ STRING(REGEX REPLACE ".*/(.*)" "\\1" CURRENT_FOLDER ${CMAKE_CURRENT_SOURCE_DIR})
 # 项目名称
 project(${CURRENT_FOLDER})
 
+# 自动添加当前源码目录和生成目录到包含目录
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
 # 加入一个配置头文件用于处理CMake对源码的设置
 configure_file(
   ${PROJECT_SOURCE_DIR}/config.h.in
