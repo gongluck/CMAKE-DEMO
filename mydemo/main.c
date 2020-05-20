@@ -15,8 +15,16 @@
 int main()
 {
     printf("hello, cmake!\n");
+
 #ifdef USESUBMODULE
     printf("1+1=%d\n", myfun(1, 1));
 #endif//USESUBMODULE
+
+#ifdef HAVEPRINTF
+    puts("found printf.");
+#else
+    puts("not found printf.");
+#endif//HAVEPRINTF
+
     return 0;
 }

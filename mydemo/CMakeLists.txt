@@ -7,16 +7,30 @@ STRING(REGEX REPLACE ".*/(.*)" "\\1" CURRENT_FOLDER ${CMAKE_CURRENT_SOURCE_DIR})
 # 项目名称
 project(${CURRENT_FOLDER})
 
+# 添加函数检查功能
+include(CheckFunctionExists)   
+check_function_exists(printf HAVEPRINTF)
+if(HAVEPRINTF)
+  # 添加宏定义
+  add_definitions(-DHAVEPRINTF)
+endif()
+
 # 自动添加当前源码目录和生成目录到包含目录
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-# 分别设置了Debug版本和Release版本可执行文件的输出目录
+# 设置可执行文件的输出目录(经测试,linux环境有效)
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)       
+
+# 设置库文件的输出目录(经测试,linux环境有效)
+set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)           
+
+# 分别设置了Debug版本和Release版本可执行文件的输出目录(经测试,windows环境有效)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR}/bin) 
 
-# 分别设置了Debug版本和Release版本库文件的输出目录
+# 分别设置了Debug版本和Release版本库文件的输出目录(经测试,windows环境有效)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG ${CMAKE_BINARY_DIR}/lib)
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR}/lib) 
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR}/lib)
 
 # 加入一个配置头文件用于处理CMake对源码的设置
 configure_file(
