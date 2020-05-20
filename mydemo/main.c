@@ -14,7 +14,7 @@
 
 int main()
 {
-    printf("hello, cmake!\n");
+    printf("hello, cmake!version:%d.%d\n", VERSION_MAJOR, VERSION_MINOR);
 
 #ifdef USESUBMODULE
     printf("1+1=%d\n", myfun(1, 1));

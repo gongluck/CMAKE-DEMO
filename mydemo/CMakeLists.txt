@@ -1,6 +1,10 @@
 # CMake最低版本要求
 cmake_minimum_required(VERSION 3.0)
 
+# 添加版本号
+set(VERSION_MAJOR 1)
+set(VERSION_MINOR 0)
+
 # 获取当前文件夹名
 STRING(REGEX REPLACE ".*/(.*)" "\\1" CURRENT_FOLDER ${CMAKE_CURRENT_SOURCE_DIR})
 
