@@ -84,3 +84,10 @@ enable_testing()
 
 # 测试程序
 do_test(mydemo "cmake")
+
+# 构建一个CPack安装包
+include(InstallRequiredSystemLibraries)
+# 设置安装包版本号
+set(CPACK_PACKAGE_VERSION_MAJOR "${VERSION_MAJOR}")
+set(CPACK_PACKAGE_VERSION_MINOR "${VERSION_MINOR}")
+include(CPack)
