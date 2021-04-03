@@ -1,4 +1,6 @@
 # CMAKE-DEMO
+这里应该不会在维护了，后续更新请移步：[https://github.com/gongluck/CVIP.git](https://github.com/gongluck/CVIP/blob/master/code/cmake/CMakeLists.txt)
+
 cmake 学习
 https://gongluck.github.io/tags/cmake/
 
